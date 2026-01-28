@@ -28,9 +28,9 @@ Labor Vout Difference
 from machine import Pin, ADC
 
 VOLTAGE_FACTOR: float = 4.66
-voltage_sensor_pin : int = 0
+voltage_sensor_pin = ADC(Pin(0))
 
-def battery_voltage():
+def battery_voltage() -> float:
     pin_value = voltage_sensor_pin.read_u16()
-    voltage = pin_value * (3.3/65535) * VOLTAGE_FACTOR
+    voltage: float = pin_value * (3.3/65535) * VOLTAGE_FACTOR
     return voltage
