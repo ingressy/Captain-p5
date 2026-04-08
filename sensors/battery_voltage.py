@@ -47,10 +47,10 @@ def initmcp():
     return chan1
 
 
-VOLTAGE_FACTOR: float = 4.66
+VOLTAGE_FACTOR: float = 5.759637188
 def readvoltage(chan: AnalogIn) -> float:
     voltage = chan.voltage
     volt = voltage * VOLTAGE_FACTOR
-    print(f"{volt:.2f}A")
+    print(f"{volt:.2f}V")
     return volt
 
